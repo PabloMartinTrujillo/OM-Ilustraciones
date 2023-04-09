@@ -8,3 +8,12 @@
  
  Los clientes realizan encargos, donde suben una la foto a ilustrar junto a diferentes características como el estilo de ilustración, número de personas, tamaño,    cantidad, así como un comentario para escribir algún mensaje como por ejemplo alguna indicación.
 
+# Tecnologías
+· Laravel 8
+· PHP
+· React
+· JavaScript
+· HTML5
+· CSS3
+· MySQL
+· AWS
