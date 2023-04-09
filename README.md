@@ -18,4 +18,5 @@
 · MySQL
 · AWS
 
+## Base de datos
 ![image](https://user-images.githubusercontent.com/72193242/230787643-3073c120-4246-4821-9dc4-dfdeb91a43e2.png)
