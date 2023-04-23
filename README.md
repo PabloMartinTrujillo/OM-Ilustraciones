@@ -12,6 +12,7 @@
 · Laravel 8
 · PHP
 · React
+· Inertia.js
 · JavaScript
 · HTML5
 · CSS3
