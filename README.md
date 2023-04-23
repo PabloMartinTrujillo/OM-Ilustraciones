@@ -23,4 +23,5 @@ En estos enlaces se pueden encotrar dos ejemplos de mockup de la página web. [E
 
 ## Esquema E/R provisional
 La base de datos será ampliada con una entidad Carrito, que tiene una relación 1 a 1 con Usuario, así como 0 a N con Encargo. De esta manera un usuario tiene un carrito y el carrito puede tener 0 o muchos encargos.
-![image](https://user-images.githubusercontent.com/72193242/230787643-3073c120-4246-4821-9dc4-dfdeb91a43e2.png)
+![image](https://user-images.githubusercontent.com/72193242/233839573-aa1705af-e6cc-4e83-a61c-23dac3511b1e.png)
+
