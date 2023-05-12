@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nav */
+
+#nav {
+    background-color: plum;
+    width: 100%;
+    height: 6.01vh;
+    min-height: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* Cuerpo */
+
+#cuerpo {
+    width: 100%;
+    height: 100%;
+    min-height: 93.99vh;
+    background: linear-gradient(0deg, rgba(49, 47, 50, 1) 29%, rgba(23, 15, 4, 0.9893207282913166) 99%);
+    color: ivory;
+}
+
+
+/* Main */
+
+#main-container {
+    height: 100%;
+    min-height: 93.99vh;
+    background: linear-gradient(0deg, rgba(49, 47, 50, 1) 29%, rgba(23, 15, 4, 0.9893207282913166) 99%);
+}
+
+#main-cabecera {
+    height: 41vw;
+    overflow: hidden;
+}
+
+#main-video-container {
+    width: 90%;
+    margin: 1vw auto 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#video {
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+}
+
+#filtro {
+    width: 100%;
+    height: 90%;
+    /* margin: 1vw auto 0 auto; */
+    background-color: black;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#main-cuerpo {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Galerías Main*/
+
+#galeria-titulo {
+    font-size: 2rem;
+    padding-top: 2vh;
+    margin: auto;
+    text-align: center;
+}
+
+#galeria-container-galerias {
+    width: 85%;
+    min-height: 40vh;
+    margin: 3vh auto 0 auto;
+    padding-top: 3vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    /* border: 3px solid ivory; */
+    border-radius: 15px;
+    box-shadow: 3px 3px 5p ivory;
+}
+
+.btn-crear {
+    background-color: lightgreen;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1vh 1vw 1vh 1vw;
+    margin-left: 3vw;
+    color: black;
+}
+
+.galeria-mostrar {
+    width: 90%;
+    min-height: 180px;
+    border: 1px solid ivory;
+    border-radius: 15px;
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galeria-item-container {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1vh 0 2vh 0;
+}
+
+.galeria-item {
+    margin: 1vh 0 1vh 2vw;
+    overflow: auto;
+}
+
+.galeria-item-nomGal {
+    font-size: 1.5rem;
+}
+
+.galeria-btns {
+    width: 100%;
+    margin-top: 1vh;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+
+.btn-modificar {
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1% 2% 1% 2%;
+}
+
+.btn-borrar,
+.btn-cancelar {
+    background-color: rgb(225, 53, 53);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 9% 10% 9% 10%;
+}
+
+.galeria-imagenes-container {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria-imagen {
+    width: 20%;
+    margin: 0.5vh 0.5vw 0.5vh 0;
+}
+
+
+/* Galería Form Crear */
+
+.galeria-form-input {
+    color: black;
+}
+
+#galeria-form-container {
+    min-width: 400px;
+    min-height: 300px;
+    width: 40vw;
+    height: 50vh;
+    margin: 10vh auto 10vh auto;
+    display: flex;
+    border: 1px solid ivory;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#btn-cancelar {
+    padding: 2% 3% 2% 3%;
+}
+
+
+/* Galerías */
+
+#galeria-container-imagenes {
+    width: 80%;
+    min-height: 40vh;
+    margin: 5vh auto 5vh auto;
+    padding: auto;
+    padding: 3vh 0 3vh 0;
+    border: 1px solid ivory;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* Imagen */
+
+#imagen-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+/* Imagen add form */
+
+#imagen-form-container {
+    width: 38%;
+    min-height: 300px;
+    height: 50vh;
+    border: 1px solid ivory;
+    border-radius: 15px;
+    margin: 20vh auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imagen-btns {
+    margin-top: 3vh;
+}
+
+
+/* Login */
+
+#login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007690;
+}
+
+#login-form-container {
+    width: 30vw;
+    height: 50%;
+    margin-left: 10vw;
+    background-color: ivory;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login-item {
+    width: 80%;
+    margin: auto;
+}
+
+#login-btns,
+#register-btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#login-btns {
+    margin-bottom: -3vh;
+}
+
+#btn-registrar {
+    color: black;
+    text-decoration: none;
+    background-color: lightgrey;
+    padding: 0.7vh 0.7vw 0.7vh 0.7vw;
+    border-radius: 5px;
+}
+
+#login-img-container {
+    width: 49.5%;
+    height: 100%;
+    /* position: relative; */
+}
+
+
+/* Register */
+
+.register-datos {
+    margin: 2vh 0 2vh 0;
+}
