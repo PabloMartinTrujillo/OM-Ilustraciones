@@ -12,36 +12,34 @@
 
         
         <link rel="stylesheet" href="<?php echo e(asset('/css/app.css')); ?>">
-        
 
         <!-- Scripts -->
             
         <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
+        <?php echo $__env->yieldContent("js"); ?>
     </head>
     
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        
             
 
             <!-- Page Heading -->
             
-            <nav> 
-
-                <div id="nav" class="header">
+                <div id="nav">
                     
-                    <a class="enlace" href="<?php echo e(route("main")); ?>"><?php echo app('translator')->get("app.btn_inicio"); ?></a>
-                    <a class="enlace" href=""><?php echo app('translator')->get("app.btn_encargos"); ?></a>
+                    <a class="enlaceNav" href="<?php echo e(route("main")); ?>"><?php echo app('translator')->get("app.btn_inicio"); ?></a>
+                    <a class="enlaceNav" href=""><?php echo app('translator')->get("app.btn_encargos"); ?></a>
 
                     <?php if(Auth::check()): ?>
                         
-                        <a class="enlace" href="">
+                        <a class="enlaceNav" href="">
                             <?php if(Auth::user()->tipoUsu == "cliente"): ?> <?php echo app('translator')->get("app.btn_perfil"); ?>
                                 <?php else: ?> <?php echo app('translator')->get("app.admin_usuarios"); ?>
                                 <?php endif; ?>
                         </a>
 
                         
-                        <a class="enlace" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.btn_galeria"); ?></a>
+                        <a class="enlaceNav" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.btn_galeria"); ?></a>
                         
                         <div class="divSaludoLogOut">
                             <div class="self-center mr-4"><?php echo app('translator')->get("app.saludo"); ?><?php echo e(Auth::user()->nomUsu); ?></div>
@@ -56,7 +54,7 @@
                     <?php else: ?>
                         <div><?php echo app('translator')->get("app.invitado"); ?></div>
                         
-                        <a class="enlace" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.btn_galeria"); ?></a>
+                        <a class="enlaceNav" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.btn_galeria"); ?></a>
                         <div class="flex flex-row">
                             <div class="self-center mr-4">
                                 <form action="<?php echo e(route("login")); ?>" method="get">
@@ -66,13 +64,12 @@
                         </div>
                     <?php endif; ?>
                 </div>
-            </nav>
 
             <!-- Page Content -->
             <main>
                 <?php echo $__env->yieldContent("content"); ?>
             </main>
-        </div>
+        
     </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\ProyectoFinal\resources\views/layouts/app.blade.php ENDPATH**/ ?>

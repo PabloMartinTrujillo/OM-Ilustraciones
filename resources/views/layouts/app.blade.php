@@ -12,22 +12,20 @@
 
         {{-- Styles --}}
         <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-        {{-- @yield("css") --}}
 
         <!-- Scripts -->
             {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         <script src="{{ asset('js/app.js') }}" defer></script>
+        @yield("js")
     </head>
     
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        {{-- <div class="min-h-screen bg-gray-100"> --}}
             {{-- @include('layouts.navigation') --}}
 
             <!-- Page Heading -->
             
-            <nav> 
-
-                <div id="nav" class="header">
+                <div id="nav">
                     {{-- <form action="{{ route("main") }}" method="post">
                         @csrf
                         <button class="btn-enlace" type="submit">@lang("app.btn_inicio")</button>
@@ -36,8 +34,8 @@
                         @csrf
                         <button class="btn-enlace" type="submit">@lang("app.btn_encargos")</button>
                     </form> --}}
-                    <a class="enlace" href="{{route("main")}}">@lang("app.btn_inicio")</a>
-                    <a class="enlace" href="{{-- {{route("encargo.listar")}} --}}">@lang("app.btn_encargos")</a>
+                    <a class="enlaceNav" href="{{route("main")}}">@lang("app.btn_inicio")</a>
+                    <a class="enlaceNav" href="{{-- {{route("encargo.listar")}} --}}">@lang("app.btn_encargos")</a>
 
                     @if(Auth::check())
                         {{-- <form action="{{ route("usuario.listar") }}" method="post">
@@ -48,7 +46,7 @@
                                 @endif
                             </button>
                         </form> --}}
-                        <a class="enlace" href="{{-- {{route("")}} --}}">
+                        <a class="enlaceNav" href="{{-- {{route("")}} --}}">
                             @if(Auth::user()->tipoUsu == "cliente") @lang("app.btn_perfil")
                                 @else @lang("app.admin_usuarios")
                                 @endif
@@ -58,7 +56,7 @@
                             @csrf
                             <button class="btn-enlace" type="submit">@lang("app.btn_galeria")</button>
                         </form> --}}
-                        <a class="enlace" href="{{route("galeria.mostrar")}}">@lang("app.btn_galeria")</a>
+                        <a class="enlaceNav" href="{{route("galeria.mostrar")}}">@lang("app.btn_galeria")</a>
                         
                         <div class="divSaludoLogOut">
                             <div class="self-center mr-4">@lang("app.saludo"){{ Auth::user()->nomUsu }}</div>
@@ -75,7 +73,7 @@
                         {{-- <form action="{{route("galeria.mostrar")}}" method="post">
                             <button class="btn-enlace" type="submit">@lang("app.btn_galeria")</button>
                         </form> --}}
-                        <a class="enlace" href="{{route("galeria.mostrar")}}">@lang("app.btn_galeria")</a>
+                        <a class="enlaceNav" href="{{route("galeria.mostrar")}}">@lang("app.btn_galeria")</a>
                         <div class="flex flex-row">
                             <div class="self-center mr-4">
                                 <form action="{{ route("login") }}" method="get">
@@ -85,12 +83,11 @@
                         </div>
                     @endif
                 </div>
-            </nav>
 
             <!-- Page Content -->
             <main>
                 @yield("content")
             </main>
-        </div>
+        {{-- </div> --}}
     </body>
 </html>
