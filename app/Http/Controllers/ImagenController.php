@@ -62,4 +62,11 @@ class ImagenController extends Controller
         $imagen->galeria()->attach($req->input("idGal"));
         return redirect()->route("galeria.modificar", $req->input("idGal"));
     }
+
+    public function borrar(Request $req, $idGal ,$idImg) {
+        $imagen = Imagen::find($idImg);
+        $imagen->delete();
+
+        return redirect(route("galeria.modificar",$idGal));
+    }
 }
