@@ -20,7 +20,7 @@
                     <div class="galeria-item-nomGal main-nomGal"><b>{{$galeria->nomGal}}</b></div>
                     <div class="main-galeria-imagenes-container">
                         @foreach ($galeria->getImagenes()->getResults()->all() as $imagen)
-                            <img class="galeria-imagen" src="{{ asset("storage/img/$imagen->rutaImg") }}"/>
+                            <img class="main-galeria-imagen" src="{{ asset("storage/img/$imagen->rutaImg") }}"/>
                         @endforeach
                     </div>
                 </div>

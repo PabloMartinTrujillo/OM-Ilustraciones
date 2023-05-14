@@ -10,6 +10,12 @@
                 <div>
                     <div><a class="btn-crear" href="{{route("galeria.formCrear")}}">@lang("app.galeria_crear")</a></div>
                 </div>
+                {{-- <div>
+                    <form action="{{ route("imagen.resizeAll") }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn-modificar">Resize all images</button>
+                    </form>
+                </div> --}}
                 
                 <div id="galeria-container-galerias">
                     {{-- @empty($galerias)

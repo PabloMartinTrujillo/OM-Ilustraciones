@@ -17,7 +17,7 @@
                 </div>
                 <input type="file" name="imagen"/>
                 <div class="galeria-btns imagen-btns" style="margin-left:0;margin-right:0;">
-                    <a id="btn-cancelar" class="btn-borrar" href="{{ route("galeria.mostrar") }}">@lang("app.form_cancelar")</a>
+                    <a id="btn-cancelar" class="btn-borrar" href="{{ route("galeria.modificar",$galeria->idGal) }}">@lang("app.form_cancelar")</a>
                     <button type="submit" class="btn-crear">@lang("app.galeria_crear")</button>
                 </div>
             </form>

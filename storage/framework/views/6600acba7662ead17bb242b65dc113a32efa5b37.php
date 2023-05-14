@@ -11,6 +11,7 @@
                     <div><a class="btn-crear" href="<?php echo e(route("galeria.formCrear")); ?>"><?php echo app('translator')->get("app.galeria_crear"); ?></a></div>
                 </div>
                 
+                
                 <div id="galeria-container-galerias">
                     
                     <?php $__currentLoopData = $galerias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeria): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

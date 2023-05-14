@@ -20,7 +20,7 @@
                     <div class="galeria-item-nomGal main-nomGal"><b><?php echo e($galeria->nomGal); ?></b></div>
                     <div class="main-galeria-imagenes-container">
                         <?php $__currentLoopData = $galeria->getImagenes()->getResults()->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $imagen): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <img class="galeria-imagen" src="<?php echo e(asset("storage/img/$imagen->rutaImg")); ?>"/>
+                            <img class="main-galeria-imagen" src="<?php echo e(asset("storage/img/$imagen->rutaImg")); ?>"/>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>

@@ -7,6 +7,7 @@
     <div id="login-container">
         
         <div id="login-form-container">
+            
             <form method="POST" action="<?php echo e(route('register')); ?>">
                 <?php echo csrf_field(); ?>
 
@@ -152,7 +153,7 @@
             </form>
         </div>
         <div id="login-img-container">
-            <img class="imgLogin" src="<?php echo e(asset("/img/imgLogin.jpg")); ?>" draggable="false"/>
+            <img class="imgLogin" src="<?php echo e(asset("storage/img/imgLogin.jpg")); ?>" draggable="false"/>
         </div>
     </div>
  <?php echo $__env->renderComponent(); ?>
