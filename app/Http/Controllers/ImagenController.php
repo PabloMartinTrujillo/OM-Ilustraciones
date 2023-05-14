@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Imagen;
 use App\Models\Galeria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -25,33 +26,24 @@ class ImagenController extends Controller
             "imagen" => ["required", "file"]
         ]);
 
-        /* function imagenGuardada($img,$conjunto) { // Compruebo si la imagen ya ha sido almacenada
+        function imagenGuardada($img,$conjunto) { // Compruebo si la imagen ya ha sido almacenada
             foreach($conjunto as $imagen) {
                 if(hash_file('sha256',$img) === hash_file('sha256',"storage/img/".$imagen->rutaImg)) {
                     return true;
                 }
             }
             return false;
-        } */
-
-        // $imagenes = Galeria::find($req->input("idGal"))->getImagenes()->getResults()->all();
-
-        // dd(imagenGuardada($req->file("imagen"),$imagenes));
-
-        /* if(imagenGuardada($req->file("imagen"),$imagenes)) {
-
-        } */
+        }
 
         $nombreArchivo = time().".".$req->file('imagen')->getClientOriginalExtension();
         $req->file('imagen')->storeAs('/public/img', $nombreArchivo);
 
-        /* $imgResized = Image::make("storage/img/" . $imagenes[0]->rutaImg);
-        $imgResized->resize(500, 500, function($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
+        $imgResized = Image::make("storage/img/" . $nombreArchivo);
+        $imgResized->resize(null, 300, function($constraint) { // Redimensiona la imagen
+            $constraint->aspectRatio(); // almacenada anteriormente a 300 de altura,
+            $constraint->upsize();  //  la anchura se ajusta para no deformar la imagen
         });
-        $imgResized->save(public_path("img\'".$nombreArchivo));
-        dd($imgResized); */
+        $imgResized->save();    // Sobreescribo la imagen guardada con la redimensionada
 
         $imagen = new Imagen;
         $imagen->nomImg = $req->input("nomImg");
@@ -65,8 +57,26 @@ class ImagenController extends Controller
 
     public function borrar(Request $req, $idGal ,$idImg) {
         $imagen = Imagen::find($idImg);
+        Storage::delete("storage/img/".$imagen->rutaImg);
         $imagen->delete();
 
         return redirect(route("galeria.modificar",$idGal));
     }
+
+    /* public function resizeAll(Request $req) {
+        $imagenes = Imagen::all();
+
+        foreach($imagenes as $imagen) {
+            $imgResize = Image::make("storage/img/".$imagen->rutaImg);
+
+            $imgResize->resize(null, 300, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            $imgResize->save();
+        }
+
+        return redirect(route("galeria.mostrar"));
+    } */
 }
