@@ -22,8 +22,11 @@ En estos enlaces se pueden encotrar dos ejemplos de mockup de la página web. [E
 ![image](https://user-images.githubusercontent.com/72193242/233839573-aa1705af-e6cc-4e83-a61c-23dac3511b1e.png)
 
 ## Histórico de cambios
-10/04/2023 --> Subida del anteproyecto
-23/04/2023 --> Actualizar anteproyecto
-12/05/2023 --> Subida proyecto para la revisión
+10/04/2023 --> Subida del anteproyecto  
+
+23/04/2023 --> Actualizar anteproyecto  
+
+12/05/2023 --> Subida proyecto para la revisión  
+
 13/05/2023 --> Añadida la funcionalidad de borrar imágenes de una galería junto con el archivo interfazImg.js, archivo 
                animaciónGaleria.js para el main, añadido css, modificado varias vistas y añadido ruta para borrar imágenes.
