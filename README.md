@@ -32,5 +32,4 @@ En estos enlaces se pueden encotrar dos ejemplos de mockup de la página web. [E
                animaciónGaleria.js para el main, añadido css, modificado varias vistas y añadido ruta para borrar imágenes.
                
 14/05/2023 (Subido el 15) --> Usada libreria Intervention Image para reescalar imagenes a 300px de altura, el ancho se ajusta solo proporcionalmente. Ahora las 
-                              imágenes eliminadas también se eliminan del almacenamiento del servidor. Css añadido y modificado. Ahora en el nav hay un icono de 
-                              usuario, donde haciendo click se abre un menú desplegable mediante el archivo añadido menuUsuario.js. Vistas modificadas.
+imágenes eliminadas también se eliminan del almacenamiento del servidor. Css añadido y modificado. Nav rediseñado. Ahora en el nav hay un icono de usuario, donde haciendo click se abre un menú desplegable mediante el archivo añadido menuUsuario.js. Vistas modificadas.
