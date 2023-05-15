@@ -33,7 +33,6 @@ class GaleriaController extends Controller
 
     public function borrar(Request $req, $idGal) {
         $encargo = Galeria::find($idGal);
-        // Storage::delete("/img/".$encargo->imagenEnc);
         $encargo->delete();
         return redirect()->route("galeria.mostrar");
     }

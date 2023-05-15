@@ -8,7 +8,7 @@ return [
     'etq_modificar' => 'Modificar',
     'etq_borrar' => 'Borrar',
 
-    'galeria_titulo' => 'Galería',                             // Galería
+    'galeria' => 'Galería',                             // Galería
     'galeria_crear' => 'Crear galería',
     'galeria_form_nomGal' => 'Nombre de la galería',
     'galeria_form_desGal' => 'Descripción de la galería',

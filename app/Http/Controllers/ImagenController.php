@@ -36,7 +36,7 @@ class ImagenController extends Controller
         }
 
         $nombreArchivo = time().".".$req->file('imagen')->getClientOriginalExtension();
-        $req->file('imagen')->storeAs('/public/img', $nombreArchivo);
+        $req->file('imagen')->storeAs('/public/img', $nombreArchivo); // Guardo la imagen
 
         $imgResized = Image::make("storage/img/" . $nombreArchivo);
         $imgResized->resize(null, 300, function($constraint) { // Redimensiona la imagen
@@ -45,38 +45,38 @@ class ImagenController extends Controller
         });
         $imgResized->save();    // Sobreescribo la imagen guardada con la redimensionada
 
-        $imagen = new Imagen;
-        $imagen->nomImg = $req->input("nomImg");
-        $imagen->desImg = $req->input("desImg");
-        $imagen->rutaImg = $nombreArchivo;
+        $imagenes = Galeria::find($req->input("idGal"))->getImagenes()->getResults()->all();
+        $ruta = "storage/img/".$nombreArchivo;
 
-        $imagen->save();
-        $imagen->galeria()->attach($req->input("idGal"));
+        if(imagenGuardada($ruta, $imagenes)) {
+            Storage::delete("public/img/". $nombreArchivo);
+        } else {
+            $imagen = new Imagen;
+            $imagen->nomImg = $req->input("nomImg");
+            $imagen->desImg = $req->input("desImg");
+            $imagen->rutaImg = $nombreArchivo;
+
+            $imagen->save();
+            $imagen->galeria()->attach($req->input("idGal"));
+        }
+        
         return redirect()->route("galeria.modificar", $req->input("idGal"));
     }
 
     public function borrar(Request $req, $idGal ,$idImg) {
         $imagen = Imagen::find($idImg);
-        Storage::delete("storage/img/".$imagen->rutaImg);
+        Storage::delete("public/img/". $imagen->rutaImg);
         $imagen->delete();
 
         return redirect(route("galeria.modificar",$idGal));
     }
 
-    /* public function resizeAll(Request $req) {
-        $imagenes = Imagen::all();
+    public function addAOtraGaleriaView (Request $req, $idGal, $idImg) {
+        return view("imagen.addAOtraGaleria", ["imagen" => Imagen::find($idImg), "idGal" => $idGal]);
+    }
 
-        foreach($imagenes as $imagen) {
-            $imgResize = Image::make("storage/img/".$imagen->rutaImg);
-
-            $imgResize->resize(null, 300, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-
-            $imgResize->save();
-        }
-
-        return redirect(route("galeria.mostrar"));
-    } */
+    public function addAOtraGaleria (Request $req, $idImg, $idGal) {
+        Imagen::find($idImg)->galeria()->attach($req->input("galeria"));
+        return redirect(route("galeria.modificar",$idGal));
+    }
 }
