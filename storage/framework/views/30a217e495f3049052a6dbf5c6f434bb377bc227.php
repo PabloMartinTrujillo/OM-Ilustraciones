@@ -72,11 +72,11 @@
                                 x="10.247646"
                                 y="35.251579"
                                 id="olgamartint"
-                                transform="scale(0.81898978,1.2210165)"><tspan
+                                transform="scale(1.5,1.2210165)"><tspan
                                     sodipodi:role="line"
                                     id="tspan287"
                                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.7px;font-family:'Helsa Display';-inkscape-font-specification:'Helsa Display, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e1c699;fill-opacity:1;stroke-width:2.89151"
-                                    x="-20.247646"
+                                    x="2.747646"
                                     y="35.251579">Olgamartint</tspan></text>
                                 <text
                                 xml:space="preserve"
@@ -88,7 +88,7 @@
                                     sodipodi:role="line"
                                     id="tspan9907"
                                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:'Aristotelica Pro Text';-inkscape-font-specification:'Aristotelica Pro Text, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:2.20872"
-                                    x="150"
+                                    x="142.5"
                                     y="24.198959">Ilustraciones</tspan></text>
                                 <text
                                 xml:space="preserve"
@@ -100,7 +100,7 @@
                                     sodipodi:role="line"
                                     id="tspan9907-0"
                                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:'Aristotelica Pro Text';-inkscape-font-specification:'Aristotelica Pro Text, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:2.20872"
-                                    x="150"
+                                    x="142.5"
                                     y="39">Personalizadas</tspan></text>
                             </g>
                         </svg>
@@ -118,7 +118,7 @@
                             </a>
 
                             
-                            <a class="enlaceNav" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.btn_galeria"); ?></a>
+                            <a class="enlaceNav" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.galeria"); ?></a>
                             
                             <div id="nav-usuario">
                                 

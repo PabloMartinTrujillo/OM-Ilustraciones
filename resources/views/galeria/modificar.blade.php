@@ -20,6 +20,9 @@
                         @csrf
                         <button class="imagen-btn-borrar" type="submit">@lang("app.etq_borrar")</button>
                     </form>
+                    <form action="{{ route("imagen.addAOtraGaleriaView",["idGal" => $galeria->idGal, "idImg" => $imagen->idImg]) }}" method="get">
+                        <button class="imagen-btn-add" type="submit">+</button>
+                    </form>
                 </div>
             </div>
         @endforeach

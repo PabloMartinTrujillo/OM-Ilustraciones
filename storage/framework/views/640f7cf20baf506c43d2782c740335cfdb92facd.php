@@ -20,6 +20,9 @@
                         <?php echo csrf_field(); ?>
                         <button class="imagen-btn-borrar" type="submit"><?php echo app('translator')->get("app.etq_borrar"); ?></button>
                     </form>
+                    <form action="<?php echo e(route("imagen.addAOtraGaleriaView",["idGal" => $galeria->idGal, "idImg" => $imagen->idImg])); ?>" method="get">
+                        <button class="imagen-btn-add" type="submit">+</button>
+                    </form>
                 </div>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

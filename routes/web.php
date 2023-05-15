@@ -37,6 +37,8 @@ Route::group(["prefix" => "imagen", "as" => "imagen.", /* "middleware" => ["auth
     Route::post("/guardar", [ImagenController::class, "guardar"])->name("guardar");
     // Route::get("/modificar/{idGal}", [GaleriaController::class, "modificar"])->middleware(["adminUser"])->name("modificar");
     Route::post("{idGal}/borrar/{idImg}", [ImagenController::class, "borrar"])->middleware(["adminUser"])->name("borrar") ;
+    Route::get("{idGal}/addAOtraGaleria/{idImg}", [ImagenController::class, "addAOtraGaleriaView"])->middleware(["adminUser"])->name("addAOtraGaleriaView") ;
+    Route::post("addAOtraGaleria/{idImg}/{idGal}", [ImagenController::class, "addAOtraGaleria"])->middleware(["adminUser"])->name("addAOtraGaleria") ;
     // Route::post("/encargar",  [EncargoController::class, "encargar"])->name("encargar") ;
     // Route::post("/modificar", [EncargoController::class, "guardarMod"])->name("guardarMod");
 });
