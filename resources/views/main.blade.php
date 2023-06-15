@@ -2,6 +2,7 @@
 
 @section("js")
     <script src="{{ asset('js/animacionGaleria.js') }}" defer></script>
+    <script src="{{ asset('js/animacionNav.js') }}" defer></script>
 @endsection
 
 @section("content")
@@ -11,7 +12,6 @@
                 <video id="video" src="{{ asset("video/video.mp4") }}" muted autoplay loop></video>
                 <div id="filtro"></div>
             </div>
-            {{-- <div id="titulo">@lang("")Convierte una foto en un regalo especial</div> --}}
         </div>
         <div id="main-galeria-container">
             <h1 id="galeria-titulo"><i>@lang("app.galeria")</i></h1>

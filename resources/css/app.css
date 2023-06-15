@@ -27,8 +27,8 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 240, 0.9);
     width: 95%;
     height: 7vh;
-    min-width: 835px;
-    /* Quitar y poner punto ruptura a 835px */
+    min-width: 1175px;
+    /* Quitar y poner punto ruptura a 1175px */
     min-height: 30px;
     margin: 2vh auto 0 auto;
     border: 1px solid black;
@@ -37,6 +37,19 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.animacionNav {
+    animation: navAnimacion 1.5s;
+}
+
+@keyframes navAnimacion {
+    0% {
+        width: 15%;
+    }
+    100% {
+        opacity: 95%;
+    }
 }
 
 #nav-logo {
@@ -130,7 +143,7 @@ body::-webkit-scrollbar-thumb {
 #cuerpo {
     width: 100%;
     height: 100%;
-    min-height: 94vh;
+    min-height: 98vh;
     color: ivory;
 }
 
@@ -254,7 +267,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    /* border: 3px solid ivory; */
     border-radius: 15px;
     box-shadow: 3px 3px 5p ivory;
 }
@@ -419,6 +431,42 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+/* Galería Ver */
+
+#galeria-ver-container {
+    width: 100%;
+    height: 84vh;
+    margin-top: 0vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#galeria-ver-div-canvas {
+    width: 800px;
+    height: 500px;
+}
+
+#galeria-ver-div-galeria {
+    width: 50vw;
+    height: 90%;
+    border: 1px solid ivory;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.galeria-ver-galeria-img {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1vh 0 1vh 0;
+}
+
+.galeria-ver-img:hover {
+    cursor: pointer;
+}
 
 /* Imagen */
 
@@ -460,7 +508,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #imagen-addAOtraGaleria-form {
-    width: 20%;
+    width: 30%;
     height: 30%;
     border: 1px solid ivory;
     border-radius: 15px;
@@ -482,6 +530,10 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid black;
     border-radius: 10px;
     background-color: red;
+}
+
+.imagen-addAOtraGaleria-form-select {
+    width: 80%;
 }
 
 
@@ -559,4 +611,290 @@ body::-webkit-scrollbar-thumb {
 
 .register-datos {
     margin: 2vh 0 2vh 0;
+}
+
+
+/* Usuario Lista usuarios - Admin */
+
+#buscador {
+    margin-top: 3vh;
+    margin-left: 6vw;
+    width: 15vw;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+#btn-buscador {
+    background-color: white;
+    color: black;
+    width: 27%;
+    height: 100%;
+}
+
+#usuarios-container {
+    width: 90%;
+    min-width: 1100px;
+    height: 70%;
+    min-height: 400px;
+    margin: 2vh auto 5vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.usuarios-categorias-container,
+.usuarios-datos-container {
+    width: 100%;
+    min-width: 1100px;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.usuarios-categorias-container {
+    margin-bottom: 4vh;
+}
+
+.usuarios-usuario {
+    margin-top: 3vh;
+}
+
+.usuarios-datos {
+    color: black;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(255, 255, 240, 0.9);
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.usuarios-btns {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Usuarios Perfil */
+
+#perfil-container {
+    width: 50%;
+    height: 40VH;
+    background-color: rgba(255, 255, 240, 0.9);
+    margin: 5vh auto 0 auto;
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.perfil-datos {
+    color: black;
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.perfil-datos-dato {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.perfil-datos-btn {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Usuarios Modificar */
+
+.perfil-datos .btn-borrar {
+    padding: 1%;
+}
+
+
+/* Encargos Main */
+
+#main-encargos-container {
+    width: 90%;
+    min-width: 1150px;
+    min-height: 864px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+    margin: 2vh auto 2vh auto;
+    padding:2vh 0 2vh 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#noEncargos {
+    color: black;
+    font-size: 2rem;
+    margin-top: 2vh;
+}
+
+.encargos-container {
+    width: 97.5%;
+    min-height: 300px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1vh auto 1vh auto;
+}
+
+.encargo-container {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5vh;
+}
+
+.encargo-item {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 1vw;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.encargo-item-datos {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* Encargos Crear */
+
+#form-encargos-container {
+    width: 50%;
+    min-width: 500px;
+    height: 80vh;
+    min-height: 600px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#form-encargos-form {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.form-encargos-div {
+    width: 30%;
+    height: 80%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.form-encargos-texto {
+    font-size: 1.5em;
+}
+
+#form-encargos-btns {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+#form-encargos-comentario {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid green; */
+}
+
+.form-encargos-comentario-item {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Carritos */
+
+.carrito-container {
+    width: 90%;
+    min-height: 100px;
+    border: 1px solid grey;
+    background-color: rgba(216, 216, 216, 0.9);
+    color: black;
+    overflow-y: auto;
+    margin-bottom: 1.5vh;
+}
+
+.carrito-titulo {
+    width: fit-content;
+    font-size: 1.5em;
+    margin: 1vh 0 0 1vw;
+}
+
+.carrito-titulo-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.carrito-encargar {
+    width: 100%;
+    padding:1%;
+    margin: 1vh 0 0 4vw;
+}
+
+/* -- */
+nav {
+    margin-top: 5vh;
+}
+
+nav > div:nth-child(2n) > div > p  {
+    display: none !important;
 }
