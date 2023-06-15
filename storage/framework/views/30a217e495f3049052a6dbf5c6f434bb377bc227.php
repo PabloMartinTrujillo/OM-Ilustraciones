@@ -21,13 +21,10 @@
     </head>
     
     <body class="font-sans antialiased">
-        
-            
 
             <!-- Page Heading -->
             
                 <div id="nav">
-                    
                     <div id="nav-logo">
                         <svg
                             viewBox="0 0 165.79539 37.999989"
@@ -109,15 +106,12 @@
                         <a class="enlaceNav" href="<?php echo e(route("main")); ?>"><?php echo app('translator')->get("app.btn_inicio"); ?></a>
 
                         <?php if(Auth::check()): ?>
-                            
                             <a class="enlaceNav" href=""><?php echo app('translator')->get("app.btn_encargos"); ?></a>
-                            <a class="enlaceNav" href="">
+                            <a class="enlaceNav" href="<?php echo e(route("usuario.perfil")); ?>">
                                 <?php if(Auth::user()->tipoUsu == "cliente"): ?> <?php echo app('translator')->get("app.btn_perfil"); ?>
                                     <?php else: ?> <?php echo app('translator')->get("app.admin_usuarios"); ?>
                                     <?php endif; ?>
                             </a>
-
-                            
                             <a class="enlaceNav" href="<?php echo e(route("galeria.mostrar")); ?>"><?php echo app('translator')->get("app.galeria"); ?></a>
                             
                             <div id="nav-usuario">

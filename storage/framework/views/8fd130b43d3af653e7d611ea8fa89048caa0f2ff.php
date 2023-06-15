@@ -2,6 +2,7 @@
 
 <?php $__env->startSection("js"); ?>
     <script src="<?php echo e(asset('js/animacionGaleria.js')); ?>" defer></script>
+    <script src="<?php echo e(asset('js/animacionNav.js')); ?>" defer></script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection("content"); ?>
@@ -11,7 +12,6 @@
                 <video id="video" src="<?php echo e(asset("video/video.mp4")); ?>" muted autoplay loop></video>
                 <div id="filtro"></div>
             </div>
-            
         </div>
         <div id="main-galeria-container">
             <h1 id="galeria-titulo"><i><?php echo app('translator')->get("app.galeria"); ?></i></h1>

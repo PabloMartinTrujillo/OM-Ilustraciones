@@ -7,12 +7,13 @@
             <?php
                 $galerias = App\Models\Galeria::all();
                 $galeriaImg = App\Models\Galeria::find($idGal);
+                $imagenEn = DB::table("galeria_imagen")->select("idGal")->where("idImg", "=", $imagen->idImg)->get()->all();
             ?>
 
             <img src="<?php echo e(asset("storage/img/" . $imagen->rutaImg)); ?>"/>
             <form id="imagen-addAOtraGaleria-form" action="<?php echo e(route("imagen.addAOtraGaleria",["idImg" => $imagen->idImg, "idGal" => $idGal])); ?>" method="post">
-                    <?php echo csrf_field(); ?>
-                    <select name="galeria">
+                <?php echo csrf_field(); ?>
+                <select name="galeria" class="imagen-addAOtraGaleria-form-select">
                     <?php $__currentLoopData = $galerias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeria): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($galeria->idGal != $galeriaImg->idGal): ?>
                             <option value="<?php echo e($galeria->idGal); ?>"><?php echo e($galeria->nomGal); ?></option>
