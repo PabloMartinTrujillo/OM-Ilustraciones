@@ -26,11 +26,10 @@ class UserFactory extends Factory
         $fecha = Carbon::now()->toDateTimeString();
         return [
             'tipoUsu' => "admin",
-            'nombre' => "admin",
-            'apellido' => "user",
+            'nomUsu' => "admin",
             'email' => "admin@gmail.com",
-            'password' => Hash::make("1234"), // password
-            'fecha_creacion' => Carbon::createFromFormat('Y-m-d H:i:s', $fecha)->format('d/m/Y H:i:s'),
+            'password' => Hash::make("11111111"), // password
+            'fechaCreacionUsu' => Carbon::createFromFormat('Y-m-d H:i:s', $fecha)->format('d/m/Y H:i:s'),
         ];
     }
 

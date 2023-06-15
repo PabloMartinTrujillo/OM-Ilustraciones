@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\DB;
 
 class ImagenController extends Controller
 {
@@ -21,9 +22,7 @@ class ImagenController extends Controller
 
         $req->validate([
             "idGal" => ["string", "required"],
-            "nomImg" => ["string", "required"],
-            "desImg" => ["string", "nullable"],
-            "imagen" => ["required", "file"]
+            "imagen" => ["required", "file"],
         ]);
 
         function imagenGuardada($img,$conjunto) { // Compruebo si la imagen ya ha sido almacenada
@@ -38,12 +37,14 @@ class ImagenController extends Controller
         $nombreArchivo = time().".".$req->file('imagen')->getClientOriginalExtension();
         $req->file('imagen')->storeAs('/public/img', $nombreArchivo); // Guardo la imagen
 
-        $imgResized = Image::make("storage/img/" . $nombreArchivo);
+        $pathImg = base_path("storage/app/public/img/".$nombreArchivo);
+
+        $imgResized = Image::make($pathImg);
         $imgResized->resize(null, 300, function($constraint) { // Redimensiona la imagen
             $constraint->aspectRatio(); // almacenada anteriormente a 300 de altura,
             $constraint->upsize();  //  la anchura se ajusta para no deformar la imagen
         });
-        $imgResized->save();    // Sobreescribo la imagen guardada con la redimensionada
+        $imgResized->save($pathImg);    // Sobreescribo la imagen guardada con la redimensionada
 
         $imagenes = Galeria::find($req->input("idGal"))->getImagenes()->getResults()->all();
         $ruta = "storage/img/".$nombreArchivo;
@@ -52,8 +53,6 @@ class ImagenController extends Controller
             Storage::delete("public/img/". $nombreArchivo);
         } else {
             $imagen = new Imagen;
-            $imagen->nomImg = $req->input("nomImg");
-            $imagen->desImg = $req->input("desImg");
             $imagen->rutaImg = $nombreArchivo;
 
             $imagen->save();
@@ -65,8 +64,14 @@ class ImagenController extends Controller
 
     public function borrar(Request $req, $idGal ,$idImg) {
         $imagen = Imagen::find($idImg);
-        Storage::delete("public/img/". $imagen->rutaImg);
-        $imagen->delete();
+        if (DB::table("galeria_imagen")->where("idImg", "=", $idImg)->get()->count() > 1) {
+            $imagen->galeria()->detach($idGal);
+        } else {
+            Storage::delete("public/img/". $imagen->rutaImg);
+            $imagen->delete();
+        }
+        // Si la imagen que se quiere borrar está en otras galerías, la imagen no
+        // se borra del almacenamiento ni de la base de datos, ya que es necesaria en otras galerías
 
         return redirect(route("galeria.modificar",$idGal));
     }

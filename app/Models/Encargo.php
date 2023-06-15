@@ -19,12 +19,12 @@ class Encargo extends Model
     // los campos created_at y updated_at
     public $timestamps = false;
 
-    protected $filleable = ["idEnc","idUsu","estiloEnc","numPerEnc",
+    protected $filleable = ["idEnc","idUsu","imagenEnc","estiloEnc","numPerEnc",
                             "tamEnc","cantEnc","comEnc"];
 
         // FUCIONES
 
-    /* public function usuario() {
-        return $this->belongsTo("App\Models\Usuario","idUsu")->first();
-    } */
+        public function carrito() {
+            return $this->belongsTo('App\Models\Carrito','idEnc','idCar')->first();
+        }
 }

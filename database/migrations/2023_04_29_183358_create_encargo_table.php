@@ -15,6 +15,7 @@ class CreateEncargoTable extends Migration
     {
         Schema::create('encargo', function (Blueprint $table) {
             $table->id("idEnc");
+            $table->unsignedBigInteger("idCar");
 
             $table->string("imagenEnc");
             $table->string("estiloEnc",100);
@@ -24,6 +25,9 @@ class CreateEncargoTable extends Migration
             $table->string("comEnc")->nullable();
             $table->string("fecha_encargo");
             $table->string("fecha_entrega")->nullable();
+            $table->integer("precio");
+
+            $table->foreign("idCar")->references("idCar")->on("carrito")->onDelete("cascade");
         });
     }
 

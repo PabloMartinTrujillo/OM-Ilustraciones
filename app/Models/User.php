@@ -51,7 +51,7 @@ class User extends Authenticatable
         return "{$this->nombre} {$this->apellido}";
     }
 
-    /* public function encargos() {
-        return $this->hasMany('App\Models\Encargo','idUsu');
-    } */
+    public function carritos() {
+        return $this->hasMany('App\Models\Carrito','idCar','idUsu')->getResults()->all();
+    }
 }

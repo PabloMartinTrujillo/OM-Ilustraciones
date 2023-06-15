@@ -36,4 +36,8 @@ class GaleriaController extends Controller
         $encargo->delete();
         return redirect()->route("galeria.mostrar");
     }
+
+    public function ver(Request $req, $idGal) {
+        return view("galeria.ver", ["galeria" => Galeria::find($idGal)]);
+    }
 }

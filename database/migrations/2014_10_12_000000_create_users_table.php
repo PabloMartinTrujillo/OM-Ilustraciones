@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('nomUsu');
             $table->string('email')->unique();
             $table->string('password')->default("1234");
-            $table->string('fechaCreacionUsu')/* ->default(Carbon\Carbon::createFromFormat('Y-m-d H:i:s', Carbon\Carbon::now()->toDateTimeString())->format('d/m/Y H:i:s')) */;
+            $table->string('fechaCreacionUsu');
         });
     }
 
