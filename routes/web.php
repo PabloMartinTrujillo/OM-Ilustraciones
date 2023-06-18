@@ -66,6 +66,7 @@ Route::group(["prefix" => "encargo", "as" => "encargo.", "middleware" => ["auth"
     Route::get("/", [EncargoController::class, "encargos"])->name("encargos");
     Route::get("/crear", [EncargoController::class, "formCrear"])->name("crear");
     Route::post("/compraEnc", [EncargoController::class, "compraEnc"])->name("compraEnc");
+    Route::post("/eliminar", [EncargoController::class, "eliminar"])->name("eliminar");
 });
 
 Route::group(["prefix" => "carrito", "as" => "carrito.", "middleware" => ["auth"]], function() 

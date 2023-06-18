@@ -41,7 +41,7 @@
                         <option value="A5">@lang("app.form_tamEnc_a5")</option>
                     </select>
                     <input type="number" name="cantidad" min="1">
-                    <input type="text" id="datepicker" name="fechaEntrega">
+                    <input type="text" id="datepicker" name="fechaEntrega" readonly>
                 </div>
             </div>
             <div id="form-encargos-comentario">

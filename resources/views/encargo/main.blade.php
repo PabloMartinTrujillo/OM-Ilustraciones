@@ -97,6 +97,13 @@
                     <div class="encargos-container">   
                     @foreach(App\Models\Encargo::where('idCar','=',$carrito->idCar)->get()->all() as $encargo)
                         <div class="encargo-container">
+                            @if($carrito->estado == "comprando")
+                                <form class="encargo-papelera-form" action="{{route("encargo.eliminar")}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="idEnc" value="{{$encargo->idEnc}}">
+                                    <button class="encargo-papelera w100-h100" type="submit"></button>
+                                </form>
+                            @endif
                             <div class="encargo-item">
                                 <div class="encargo-item-datos">
                                     <p><b>@lang("app.etq_estiloEnc")</b></p>

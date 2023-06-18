@@ -1948,6 +1948,22 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     margin-bottom: 0.5vh;
+    position: relative;
+}
+
+.encargo-papelera-form {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.encargo-papelera {
+    background-image: url(/images/papelera.png?f2faadb21b58438925a9d1f4efaf01ff);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .encargo-item {

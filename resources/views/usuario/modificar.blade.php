@@ -21,7 +21,7 @@
             </div>
             <div class="perfil-datos">
                 <label for="email" class="perfil-datos-dato"><b>@lang("app.etq_emailUsu")</b></label>
-                <input type="text" class="perfil-datos-dato" name="email" value="{{$usuario->email}}" />
+                <input type="text" class="perfil-datos-dato" name="email" value="{{$usuario->email}}" disabled/>
             </div>
             <div class="perfil-datos">
                 <label for="password" class="perfil-datos-dato"><b>@lang("app.etq_contraUsu")</b></label>
