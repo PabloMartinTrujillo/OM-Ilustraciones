@@ -43,6 +43,7 @@ return [
     'encargo_crear' => 'Make Order',
     'encargar_carrito' => 'Order Cart',
     'aceptar_encargo' => 'Approve order',
+    'rechazar_encargo' => 'Reject order',
     'encargo_checkbox' => 'I understand that, being a personalized product, it cannot be returned.',
 
     'carrito' => 'Cart',                                        // Carrito
