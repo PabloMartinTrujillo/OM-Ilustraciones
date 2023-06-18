@@ -27,6 +27,11 @@
                             <input type="hidden" name="idCar" value="{{$carrito->idCar}}"/>
                             <button class="btn-modificar carrito-encargar" type="submit">@lang("app.aceptar_encargo")</button>
                         </form>
+                        <form action="{{route("carrito.rechazar")}}" method="post" style="margin-right:3vw;">
+                            @csrf
+                            <input type="hidden" name="idCar" value="{{$carrito->idCar}}"/>
+                            <button class="btn-cancelar carrito-encargar" type="submit">@lang("app.rechazar_encargo")</button>
+                        </form>
                     </div>
                     <div class="encargos-container">   
                     @foreach(App\Models\Encargo::where('idCar','=',$carrito->idCar)->get()->all() as $encargo)
