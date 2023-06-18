@@ -43,6 +43,7 @@ return [
     'encargo_crear' => 'Realizar Encargo',
     'encargar_carrito' => 'Encargar carrito',
     'aceptar_encargo' => 'Aprobar encargo',
+    'rechazar_encargo' => 'Rechazar encargo',
     'encargo_checkbox' => 'Entiendo que, al ser un producto personalizado, no se puede devolver',
 
     'carrito' => 'Carrito',                                 // Carrito
