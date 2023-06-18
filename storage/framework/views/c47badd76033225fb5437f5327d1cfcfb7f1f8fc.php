@@ -21,7 +21,7 @@
             </div>
             <div class="perfil-datos">
                 <label for="email" class="perfil-datos-dato"><b><?php echo app('translator')->get("app.etq_emailUsu"); ?></b></label>
-                <input type="text" class="perfil-datos-dato" name="email" value="<?php echo e($usuario->email); ?>" />
+                <input type="text" class="perfil-datos-dato" name="email" value="<?php echo e($usuario->email); ?>" disabled/>
             </div>
             <div class="perfil-datos">
                 <label for="password" class="perfil-datos-dato"><b><?php echo app('translator')->get("app.etq_contraUsu"); ?></b></label>

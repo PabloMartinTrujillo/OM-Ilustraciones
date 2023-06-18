@@ -98,6 +98,13 @@
                     <div class="encargos-container">   
                     <?php $__currentLoopData = App\Models\Encargo::where('idCar','=',$carrito->idCar)->get()->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $encargo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="encargo-container">
+                            <?php if($carrito->estado == "comprando"): ?>
+                                <form class="encargo-papelera-form" action="<?php echo e(route("encargo.eliminar")); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="hidden" name="idEnc" value="<?php echo e($encargo->idEnc); ?>">
+                                    <button class="encargo-papelera w100-h100" type="submit"></button>
+                                </form>
+                            <?php endif; ?>
                             <div class="encargo-item">
                                 <div class="encargo-item-datos">
                                     <p><b><?php echo app('translator')->get("app.etq_estiloEnc"); ?></b></p>
