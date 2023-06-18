@@ -1,4 +1,7 @@
 # OM-Ilustraciones
+## Enlace a la página web
+http://18.206.75.65/
+
 ## Temática
  Este proyecto es una tienda web de venta de ilustraciones personalizadas.
  
@@ -7,6 +10,7 @@
  Hay dos tipos de usuarios. Los clientes, quienes son los que realizan los encargos. También están los administradores, que pueden administrar por ejemplo las imagenes de las distintas galerías, los encargos, los usuarios...
  
  Los clientes realizan encargos, donde suben una la foto a ilustrar junto a diferentes características como el estilo de ilustración, número de personas, tamaño,    cantidad, así como un comentario para escribir algún mensaje como por ejemplo alguna indicación.
+ 
 ## Tecnologías
 · Laravel 8
 · PHP
@@ -37,6 +41,3 @@ En estos enlaces se pueden encotrar dos ejemplos de mockup de la página web. [E
 
 ## Vídeo explicativo
 https://www.youtube.com/watch?v=7A56I5eirjg
-
-## Enlace a la página web
-http://18.206.75.65/
