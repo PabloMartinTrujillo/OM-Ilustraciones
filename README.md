@@ -11,7 +11,7 @@
 · Laravel 8
 · PHP
 · JavaScript
-· JQuery
+· jQuery
 · HTML5
 · CSS3
 · MySQL
