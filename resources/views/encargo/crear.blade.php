@@ -33,14 +33,14 @@
                         <option value="lineaSimple">@lang("app.form_estilo_lineaSimple")</option>
                         <option value="minimalista">@lang("app.form_estilo_minimalista")</option>
                     </select>
-                    <input type="number" name="numPersonas" min="1">
+                    <input type="number" name="numPersonas" min="1" max="50"/>
                     <select name="tamano">
                         <option value="digital">@lang("app.form_tamEnc_digital")</option>
                         <option value="A3">@lang("app.form_tamEnc_a3")</option>
                         <option value="A4">@lang("app.form_tamEnc_a4")</option>
                         <option value="A5">@lang("app.form_tamEnc_a5")</option>
                     </select>
-                    <input type="number" name="cantidad" min="1">
+                    <input type="number" name="cantidad" min="1" max="50"/>
                     <input type="text" id="datepicker" name="fechaEntrega" readonly>
                 </div>
             </div>
