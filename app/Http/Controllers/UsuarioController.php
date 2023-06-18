@@ -34,7 +34,8 @@ class UsuarioController extends Controller
         $req->validate([
             'tipo' => ['string'],
             'nombre' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255','unique:users'],
+            'password' => ['min:6'],
+            'confirmPassword' => ['same:password'],
         ]);
 
         /* Hacer que se guarde bien y tal */

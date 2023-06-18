@@ -8,6 +8,7 @@ use App\Models\Carrito;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EncargoController extends Controller
 {
@@ -36,11 +37,10 @@ class EncargoController extends Controller
         $req->validate([
             "imagen" => ["required", "file"],
             "estilo" => ["string", "required"],
-            "numPersonas" => ["string", "required"],
+            "numPersonas" => ["integer", "required","max:51"],
             "tamano" => ["string", "required"],
-            "cantidad" => ["string", "required"],
+            "cantidad" => ["integer", "required","max:51"],
             "fechaEntrega" => ["string", "required"],
-            "comentario" => ["string", "required"],
         ]);
 
         $nombreArchivo = time().".".$req->file('imagen')->getClientOriginalExtension();
@@ -78,7 +78,11 @@ class EncargoController extends Controller
         $encargo->numPerEnc = $req->input("numPersonas");
         $encargo->tamEnc = $req->input("tamano");
         $encargo->cantEnc = $req->input("cantidad");
-        $encargo->comEnc = $req->input("comentario");
+        if($req->input("comentario") == null) {
+            $encargo->comEnc = "-";
+        } else {
+            $encargo->comEnc = $req->input("comentario");
+        }
         $precio = 0;
         switch($req->input("estilo")) {
             case "todoColor":
@@ -147,7 +151,7 @@ class EncargoController extends Controller
                 break;
         }
         $precio += (5*($req->input("numPersonas")-1));
-        $precio += ($encargo->cantEnc = $req->input("cantidad")-1);
+        $precio += ($req->input("cantidad")-1);
 
         $encargo->precio = $precio;
         $encargo->fecha_encargo = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->toDateTimeString())->format('d/m/Y H:i:s');
@@ -157,8 +161,24 @@ class EncargoController extends Controller
         return redirect()->route("encargo.encargos");
     }
 
-    public function calculaPrecio($estilo, $personas, $tamano, $cantidad) {
-        /* dd(intval(estilo)); */
+    public function eliminar(Request $req) {
         
+        $encargo = Encargo::find($req->input("idEnc"));
+
+        if(Encargo::where("idCar","=",$encargo->idCar)->get()->count() > 1) {
+            Storage::delete("public/img/". $encargo->imagenEnc);
+            $encargo->delete();
+        }
+        else {
+            Storage::delete("public/img/". $encargo->imagenEnc);
+            $carrito = Carrito::find($encargo->idCar);
+            $carrito->delete();
+        }
+
+        if($req->has("rutaCarrito")) {
+            return redirect()->route("carrito");
+        }
+
+        return redirect()->route("encargo.encargos");
     }
 }
