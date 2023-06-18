@@ -30,4 +30,11 @@ class CarritoController extends Controller
 
         return redirect()->route("encargo.encargos");
     }
+
+    public function rechazar(Request $req) {
+        $carrito = Carrito::find($req->input("idCar"));
+        $carrito->delete();
+
+        return redirect()->route("encargo.encargos");
+    }
 }
