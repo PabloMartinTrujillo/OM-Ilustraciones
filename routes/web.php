@@ -73,6 +73,7 @@ Route::group(["prefix" => "carrito", "as" => "carrito.", "middleware" => ["auth"
 {
     Route::post("/encargar", [CarritoController::class, "encargar"])->name("encargar");
     Route::post("/aprobar", [CarritoController::class, "aprobar"])->name("aprobar");
+    Route::post("/rechazar", [CarritoController::class, "rechazar"])->name("rechazar");
 });
 
 require __DIR__.'/auth.php';
