@@ -43,4 +43,4 @@ En estos enlaces se pueden encotrar dos ejemplos de mockup de la página web. [E
 https://www.youtube.com/watch?v=7A56I5eirjg
 
 ## PDF Presentación
-[Documento PDF presentación](PresentaciónOlgamartint.pdf).
+[Documento PDF presentación](PresentaciónOlgamartint.pdf)
