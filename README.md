@@ -44,3 +44,10 @@ https://www.youtube.com/watch?v=7A56I5eirjg
 
 ## PDF Presentación
 [Documento PDF presentación](PresentaciónOlgamartint.pdf)
+
+## Bibliografía
+
+- [Youtube](https://www.youtube.com)
+- [Laravel](https://www.youtube.com)
+- [Laracasts](https://laracasts.com)
+- [Stackoverflow](https://stackoverflow.com)
