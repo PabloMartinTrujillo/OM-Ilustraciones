@@ -30,15 +30,20 @@ class UsuarioController extends Controller
     }
 
     public function guardarMod(Request $req) {
-        // dd($req);
-        $req->validate([
-            'tipo' => ['string'],
-            'nombre' => ['required', 'string', 'max:255'],
-            'password' => ['min:6'],
-            'confirmPassword' => ['same:password'],
-        ]);
-
-        /* Hacer que se guarde bien y tal */
+        
+        if($req->input("password") != null) {
+            $req->validate([
+                'tipo' => ['string'],
+                'nombre' => ['required', 'string', 'max:255'],
+                'password' => ['min:6'],
+                'confirmPassword' => ['same:password'],
+            ]);
+        } else {
+            $req->validate([
+                'tipo' => ['string'],
+                'nombre' => ['required', 'string', 'max:255'],
+            ]);
+        }
 
         $usuario = User::find($req->input("idUsu"));
 
